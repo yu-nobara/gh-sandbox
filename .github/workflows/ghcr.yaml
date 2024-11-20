@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: echo
         run: |
-          echo "${{ toJSON(github.event.registry_package) }}"
-          echo "${{ github.event.registry_package.package_version.container_metadata.labels.all_labels['org.opencontainers.image.title'] }}"
+          echo '${{ toJSON(github.event.registry_package) }}'
+          echo '${{ github.event.registry_package.package_version.container_metadata.labels.all_labels['org.opencontainers.image.source'] }}'
