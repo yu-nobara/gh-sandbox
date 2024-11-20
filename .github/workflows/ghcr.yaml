@@ -8,4 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo
-        run: echo ${{ toJSON(github.event.registry_package) }}
+        run: |
+          echo "${{ toJSON(github.event.registry_package) }}"
+          echo "${{ github.event.registry_package.package_version.container_metadata.labels.all_labels['org.opencontainers.image.title'] }}"
