@@ -1,0 +1,11 @@
+name: example for ghcr
+on:
+  registry_package:
+    types: [published]
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo ${{ toJSON(github.event.registry_package) }}
